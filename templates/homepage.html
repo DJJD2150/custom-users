@@ -1,0 +1,14 @@
+<h1>Homepage</h1>
+<!-- Got help from Chris Warren and Sohail Aslam. -->
+{% if request.user.is_authenticated %}
+    <h2>Welcome to the page, {{ request.user.username }}!</h2>
+    <p>
+        <a href="/logout/"><button>Logout</button></a>
+    </p>
+{% else %}
+    <h2>You are not welcome here.</h2>
+    <p>
+        <a href="/signup/"><button>Sign Up!</button></a>
+        <a href="/login/"><button>Login</button></a>
+    </p>
+{% endif %}
